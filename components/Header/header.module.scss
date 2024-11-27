@@ -1,0 +1,565 @@
+@import "../../styles/breakpoint";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 14;
+  pointer-events: none;
+  @include lg {
+    padding-right: 120px;
+    padding-left: 120px;
+    height: 154px;
+  }
+  @include xxl {
+    height: 254px;
+  }
+}
+
+.logo {
+  margin-inline: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // transform: translateY(-50%) translateX(-50%);
+  pointer-events: all;
+  svg {
+    height: 200px !important;
+    width: 100% !important;
+    rect {
+      fill: transparent;
+    }
+    @include lg {
+      height: 350px !important;
+    }
+    @include xxl {
+      height: 400px !important;
+    }
+  }
+}
+
+.menuBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  pointer-events: all;
+  button {
+    display: flex;
+    font-size: 1.5rem;
+    line-height: calc(1.5rem * 1.5);
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    padding-inline: 2px;
+    margin-right: 20px;
+    gap: 8px;
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+
+    @include lg {
+      margin-right: 0px;
+      gap: 18px;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+  &_box {
+    position: relative;
+    width: 30px;
+    height: 36px;
+    span {
+      position: absolute;
+      display: block;
+      height: 4px;
+      width: 30px;
+      background-color: var(--primary-text);
+      border-radius: 999px;
+    }
+    span:nth-child(1) {
+      top: 12px;
+    }
+    span:nth-child(2) {
+      top: 27px;
+    }
+    @include lg {
+      width: 58px;
+      height: 36px;
+      span {
+        height: 4px;
+        width: 58px;
+      }
+    }
+  }
+}
+
+.pathOne {
+  position: absolute;
+  top: -40px;
+  left: 10.015vw;
+  svg {
+    height: 10.015vw;
+    width: 19.556vw;
+  }
+}
+
+.pathTwo {
+  position: absolute;
+  top: -40px;
+  right: 1.302vw;
+  svg {
+    height: 16.952vw;
+    width: 15.344vw;
+  }
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-two);
+  justify-content: center;
+  clip-path: inset(100% 0% 0%);
+  @include lg {
+    // justify-content: center;
+    padding-top: 110px;
+  }
+  @include xxl {
+    padding-top: 254px;
+  }
+  &_grid {
+    display: grid;
+    justify-items: center;
+    max-width: 1540px;
+    margin-inline: auto;
+    gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 60px;
+    @include lg {
+      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 0px;
+    }
+    @include xxl {
+      column-gap: 200px;
+      row-gap: 100px;
+    }
+    a {
+      font-family: SaolDisplay, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      text-decoration: none;
+      font-weight: 400;
+      position: relative;
+      font-size: 5rem;
+      line-height: calc(5rem * 1.2);
+      @include lg {
+        line-height: 8.125rem;
+        font-size: 6.25rem;
+      }
+      &:hover {
+        svg {
+          path {
+            stroke-dashoffset: 2600px;
+          }
+        }
+      }
+      &[data-active="true"] {
+        svg {
+          path {
+            stroke-dashoffset: 2600px;
+          }
+        }
+      }
+      svg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform: scale(1.4);
+        path {
+          transition: 0.5s all var(--power4);
+          stroke-dasharray: 1300px;
+          stroke-dashoffset: 1300px;
+        }
+      }
+      @include xxl {
+        font-size: 10.9vw;
+        line-height: 13vw;
+      }
+      span {
+        font-size: 1rem;
+        line-height: calc(1rem * 1.5);
+        margin-bottom: auto;
+        @include lg {
+          margin-top: 20px;
+          line-height: 2.25rem;
+          font-size: 1.875rem;
+        }
+      }
+    }
+  }
+  &_social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: 25px;
+    @include lg {
+      margin-top: 50px;
+      flex-direction: row;
+      gap: 40px;
+      margin-top: 0px;
+      margin-bottom: 25px;
+    }
+    @include xxl {
+      margin-bottom: 100px;
+    }
+    a {
+      text-decoration: none;
+      font-size: 1.25rem;
+      line-height: calc(1.25rem * 1.5);
+      font-weight: 400;
+      @include lg {
+        line-height: 2.25rem;
+        font-size: 1.875rem;
+      }
+    }
+  }
+}
+
+.pathMenuOne {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  svg {
+    height: 80px;
+    width: 80px;
+    @include lg {
+      height: 15vw;
+      width: 15vw;
+    }
+  }
+}
+.pathMenuTwo {
+  position: absolute;
+  top: 37%;
+  left: -5%;
+  svg {
+    height: 20vw;
+    width: 30vw;
+  }
+}
+.pathMenuThree {
+  position: absolute;
+  top: 50px;
+  left: 24%;
+  @include lg {
+    top: 0%;
+  }
+  svg {
+    width: 50vw;
+    height: 20vw;
+    @include lg {
+      height: 17vw;
+      width: 20vw;
+    }
+  }
+}
+.pathMenuFour {
+  position: absolute;
+  top: 80px;
+  left: 70%;
+  @include lg {
+    top: 0%;
+  }
+  svg {
+    height: 100px;
+    width: 100px;
+    @include lg {
+      height: 10vw;
+      width: 10vw;
+    }
+  }
+}
+.pathMenuFive {
+  position: absolute;
+  top: 30%;
+  right: 0%;
+  display: none;
+  @include lg {
+    display: block;
+  }
+  svg {
+    width: 20vw;
+    height: 20vw;
+  }
+}
+.pathMenuSix {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  svg {
+    height: 20vw;
+    width: 15vw;
+  }
+}
+.pathMenuSeven {
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  svg {
+    width: 150px;
+    height: 150px;
+    @include lg {
+      height: 15vw;
+
+      width: 15vw;
+    }
+  }
+}
+.pathMenuEight {
+  position: absolute;
+  top: 75%;
+  left: 79%;
+  svg {
+    height: 150px;
+    width: 100px;
+    @include lg {
+      width: 5.781vw;
+      height: 10.938vw;
+    }
+  }
+}
+
+.large {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background-color: var(--bg-two);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  h1 {
+    background-color: var(--bg-two);
+    font-size: 20vw;
+    line-height: 20vw;
+    white-space: nowrap;
+    @include lg {
+      font-size: 10vw;
+      line-height: 10.2vw;
+    }
+  }
+}
+
+.float {
+  position: fixed;
+  z-index: 999;
+  width: 225px;
+  height: 340px;
+  inset: 20px;
+  overflow: hidden;
+  transform: rotate(20deg);
+  pointer-events: none;
+  border-radius: 8px;
+  opacity: 0;
+  &_visible {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    height: 340px;
+    width: 225px;
+    object-fit: cover;
+  }
+}
+
+.menu3D {
+  width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: 0.8s all var(--power4);
+  transform: rotate3d(1, 0, 0, 0deg);
+  z-index: 2;
+  @include lg {
+    width: 370px;
+    height: 130px;
+  }
+  @include xxl {
+    width: 27vw;
+    height: 9.5vw;
+  }
+  &:hover {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+  &_bottom {
+    position: absolute;
+    transform: rotateX(-90deg) translateZ(65px);
+  }
+  &_front {
+    position: absolute;
+    transform: translateZ(65px);
+  }
+}
+
+.menuCover {
+  position: relative;
+  svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scale(2.7);
+    @include lg {
+      transform: scale(1.4);
+    }
+    @include xxl {
+      transform: scale(1.7);
+    }
+    path {
+      transition: 0.5s all var(--power4);
+      transition-delay: 0.2s;
+      stroke-dasharray: 1300px;
+      stroke-dashoffset: 1300px;
+    }
+  }
+  &[data-active="true"] {
+    svg {
+      path {
+        stroke-dashoffset: 2600px;
+      }
+    }
+  }
+}
+
+.menufloat {
+  position: relative;
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+}
+
+.menufloats {
+  position: relative;
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    // top: 10%;
+    pointer-events: none;
+    transform: rotate(270deg);
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+}
+
+.dotNavigation {
+  position: fixed;
+  top: 48%;
+  left: 10px;
+  transform: translateY(-45%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+
+  @include lg {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.dotContainer {
+  position: relative; /* Positioning for the border */
+  width: 35px; /* Width larger than the dot to create space for the border */
+  height: 35px; /* Height larger than the dot to create space for the border */
+  display: flex;
+  align-items: center; /* Center the dot inside */
+  justify-content: center; /* Center the dot inside */
+}
+
+.dotColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dotWrapper {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px;
+  width: 70px; /* Fixed width for alignment */
+}
+
+.nameContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 90px; 
+  // transform: rotate(360deg);/* Adjust height to accommodate the vertical text */
+}
+
+.name {
+  font-size: 20px;
+  text-align: center;
+  writing-mode: vertical-rl; /* Makes the text vertical */
+  transform: rotate(180deg) !important; /* Flips the text so it's read from bottom to top */
+  // line-height: 1.2; /* Adds spacing between letters */
+}
+
+.active {
+  border: 3px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+// .activeName {
+//   text-decoration: underline !important; /* This adds the underline */
+//   color: black !important; /* You can adjust the color if needed */
+// }
+
+.dot:hover {
+  background-color: #999;
+}
+
+
+.nameContainer {
+  position: relative;
+}

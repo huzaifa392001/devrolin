@@ -1,0 +1,66 @@
+@import "../../styles/breakpoint";
+
+.main {
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  margin: 1rem;
+  padding: 1rem 1rem;
+  background-color: #ffec40;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 1rem;
+  @include lg {
+    gap: 0rem;
+    flex-direction: row;
+    margin: 2rem;
+    padding: 3rem 2rem;
+  }
+  h4 {
+    font-size: 1.4375rem;
+    line-height: calc(1.4375rem * 1.5);
+    font-weight: 400;
+    @include lg {
+      margin-right: 9.2rem;
+    }
+    a {
+      text-decoration: none;
+      color: #1d72d4;
+    }
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 1rem;
+    @include lg {
+      margin-left: 6rem;
+      gap: 2rem;
+    }
+    svg {
+      transition: 0.3s all var(--power4);
+    }
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+    &:active {
+      svg {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+.group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include lg {
+    display: flex;
+  }
+}

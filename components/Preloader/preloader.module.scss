@@ -1,0 +1,55 @@
+@import "../../styles/breakpoint";
+
+.main {
+  position: fixed;
+  z-index: 800;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  transition: 0.5s all var(--power4);
+  padding: 100px;
+  @include lg {
+    padding: 200px;
+  }
+  &[data-hide="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &_cover {
+    height: 100%;
+    width: 100%;
+  }
+  @include md {
+    padding: 200px;
+  }
+  &[data-hide="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &_cover {
+    height: 100%;
+    width: 100%;
+  }
+  @include xl {
+    padding: 220px;
+  }
+  &[data-hide="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &_cover {
+    height: 100%;
+    width: 100%;
+  }
+  @include xxl {
+    padding: 550px;
+  }
+  &[data-hide="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &_cover {
+    height: 100%;
+    width: 100%;
+  }
+}

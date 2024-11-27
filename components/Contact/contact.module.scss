@@ -1,0 +1,157 @@
+@import "../../styles/breakpoint";
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 100px;
+  @include lg {
+    margin-top: 140px;
+    min-height: 100vh;
+  }
+  h1 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+    margin-inline: auto;
+    max-width: 1260px;
+    font-size: 4rem;
+    line-height: calc(4rem * 1.2);
+    cursor: default;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      transform-origin: bottom;
+    }
+    @include lg {
+      font-size: 15.625rem;
+      line-height: calc(15.625rem / 2);
+      margin-top: calc(15.625rem / 2);
+      // margin-bottom: calc(15.625rem / 2);
+    }
+    @include xxl {
+      margin-top: 10.937rem;
+      // margin-bottom: 10.937rem;
+      max-width: 1560px;
+      font-size: 21.875rem;
+      line-height: 10.937rem;
+    }
+  }
+}
+
+.heading {
+  margin-inline: auto;
+  position: relative;
+  z-index: 4;
+  font-size: 5rem; 
+  text-align: center;
+  // font-weight: 500;
+  line-height: 0.9;
+  @include lg {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    font-size: 11rem; 
+    text-align: center;
+    line-height: 0.8;
+  }
+  svg {
+    width: 70vw;
+    path {
+      fill: transparent;
+      stroke-dasharray: 1290px;
+      stroke: black;
+    }
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  gap: 33px;
+  padding-inline: 20px;
+  @include lg {
+    padding-inline: 0px;
+    margin-top: 250px;
+    gap: 80px;
+  }
+  @include xxl {
+    gap: 150px;
+  }
+  p {
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    font-size: 1.5rem;
+    line-height: calc(1.5rem * 1.5);
+    @include lg {
+      font-size: 3rem;
+      line-height: calc(3rem * 1.2);
+    }
+    @include xxl {
+      font-size: 3.5vw;
+      line-height: calc(3.5vw * 1.2);
+    }
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 33px;
+  @include lg {
+    flex-direction: row;
+    gap: 60px;
+  }
+}
+
+.pathOne {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translateY(-40%);
+  z-index: -1;
+  svg {
+    width: 9vw;
+    height: 7vw;
+  }
+}
+.pathTwo {
+  position: absolute;
+  right: -10%;
+  top: -150px;
+  z-index: -1;
+  @include lg {
+    top: 0px;
+  }
+  svg {
+    width: 45vw;
+    height: 24vw;
+  }
+}
+.pathThree {
+  position: absolute;
+  top: 200px;
+  right: -27%;
+  svg {
+    width: 42vw;
+    height: 36vw;
+  }
+}
+
+.tag {
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-50%) rotate(270deg);
+  top: 50%;
+  left: -50px;
+  font-size: 2.5rem;
+  line-height: calc(2.5rem * 1.2);
+  margin-top: 350px;
+}

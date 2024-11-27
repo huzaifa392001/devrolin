@@ -1,0 +1,176 @@
+@import "../../styles/breakpoint";
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include lg {
+    min-height: 100vh;
+    margin-top: 120px;
+  }
+  h1 {
+    overflow: visible;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+    margin-inline: auto;
+    max-width: 1260px;
+    font-size: 4rem;
+    line-height: calc(4rem * 1.2);
+    cursor: default;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      // transition: 0.2s all var(--power4);
+      transform-origin: bottom;
+      // &:hover {
+      //   transform: scaleY(1.4);
+      // }
+    }
+    @include lg {
+      font-size: 15rem;
+      line-height: calc(15rem / 2);
+      margin-top: calc(15rem / 2);
+      margin-bottom: calc(15rem / 2);
+    }
+    @include xxl {
+      margin-top: 10.937rem;
+      margin-bottom: 10.937rem;
+      max-width: 1560px;
+      font-size: 18rem;
+      line-height: 10.937rem;
+    }
+  }
+}
+
+.heading {
+  margin-inline: auto;
+  margin-bottom: 200px;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 0.9;
+  // font-weight: 500;
+  @include lg {
+    font-size: 11rem;
+    text-align: center;
+    line-height: 0.8;
+    margin-top: 50px;
+  }
+  svg {
+    width: 80vw;
+    path {
+      fill: transparent;
+      stroke-dasharray: 1740px;
+      stroke: black;
+    }
+  }
+}
+
+.pathSix {
+  position: absolute;
+  top: -11%;
+  right: -10%;
+
+  svg {
+    width: 51.754vw;
+    height: 9.09vw;
+  }
+}
+
+.pathSeven {
+  position: absolute;
+  top: -30%;
+  left: 0%;
+
+  svg {
+    width: 55vw;
+    height: 30vw;
+  }
+}
+
+.pathNine {
+  position: absolute;
+  top: 20%;
+  left: -25%;
+  z-index: 3;
+  svg {
+    height: 25vw;
+    width: 37.426vw;
+  }
+}
+
+.pathTen {
+  position: absolute;
+  bottom: 0%;
+  left: -8%;
+
+  svg {
+    width: 30vw;
+    height: 28vw;
+  }
+}
+
+.video {
+  height: 330px;
+  object-fit: cover;
+  @include lg {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.showreel-video {
+  margin-bottom: -1000px !important;
+}
+
+.pathThree {
+  position: absolute;
+  z-index: 2;
+  left: -60%;
+  bottom: -120%;
+  transform: scale(0.8);
+  @include lg {
+    bottom: -70%;
+    left: -19%;
+  }
+  svg {
+    width: 433.94px;
+    height: 363.48px;
+    @include lg {
+      height: 41.708vw;
+      width: 46.208vw;
+    }
+  }
+}
+
+.pathFour {
+  position: absolute;
+  left: -10%;
+  z-index: 2;
+  bottom: -50%;
+  transform: scale(0.6);
+  @include lg {
+    bottom: -20%;
+  }
+  svg {
+    height: 155px;
+    width: 193px;
+    @include lg {
+      height: 16.491vw;
+      width: 20.503vw;
+    }
+  }
+}
+
+.pathEight {
+  position: absolute;
+  bottom: -50%;
+  right: -2%;
+  z-index: 2;
+  svg {
+    width: 6.939vw;
+    height: 51.356vw;
+  }
+}

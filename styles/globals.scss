@@ -1,0 +1,129 @@
+@import "./breakpoint";
+@import "./tailwind.css";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+@font-face {
+  font-family: SaolDisplay;
+  src: url("/fonts/saolDisplayThin.woff2");
+}
+
+.saolfont {
+  font-family: SaolDisplay;
+}
+
+@font-face {
+  font-family: Apercu;
+  src: url("/fonts/apercuRegular.otf");
+  font-weight: 400;
+}
+
+:root {
+  --primary-text: #2e2e2e;
+  --bg-one: #f6f2e9;
+  --bg-two: #ebebeb;
+  --bg-three: #faf2fe;
+  --bg-four: #eafcf8;
+  --power4: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+body {
+  font-family: Apercu, sans-serif;
+  color: var(--primary-text);
+  background-color: var(--bg-two);
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+button,
+li,
+a {
+  font-family: Apercu, sans-serif;
+  color: var(--primary-text);
+}
+
+h1,
+h2 {
+  font-family: SaolDisplay;
+  font-weight: 100;
+}
+span {
+  font-family: SaolDisplay;
+  font-weight: 100;
+}
+
+.saolfont {
+  font-family: SaolDisplay;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mouse.hidden {
+  display: none;
+}
+
+.mouse {
+  height: 180px;
+  width: 180px;
+  border-radius: 999px;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: none;
+  transform: scale(0.1);
+  background-color: black;
+  @include lg {
+    display: flex;
+  }
+  p {
+    font-size: 12rem;
+    line-height: calc(12rem * 1.5);
+    color: white;
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+.about-para-word,
+.client-para-word {
+  clip-path: inset(0% 100% 0% 0%);
+}
+

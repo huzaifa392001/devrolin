@@ -1,0 +1,238 @@
+@import "../../styles/breakpoint";
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 120px;
+  @include lg {
+    min-height: 100vh;
+    margin-top: 140px;
+  }
+  h1 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+    margin-inline: auto;
+    max-width: 1260px;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: calc(4rem * 1.2);
+    cursor: default;
+    span {
+      display: inline-block;
+      transform-origin: bottom;
+    }
+    @include lg {
+      font-size: 15.625rem;
+      line-height: calc(15.625rem / 2);
+      margin-top: calc(15.625rem / 2);
+      margin-bottom: calc(15.625rem / 2);
+    }
+    @include xxl {
+      margin-top: 10.937rem;
+      margin-bottom: 10.937rem;
+      max-width: 1560px;
+      font-size: 21.875rem;
+      line-height: 10.937rem;
+    }
+  }
+}
+
+.heading {
+  margin-inline: auto;
+  font-size: 5rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 0.9;
+  @include lg {
+    margin-bottom: 150px;
+    margin-top: 50px;
+    font-size: 11rem;
+    text-align: center;
+    line-height: 0.8;
+  }
+  svg {
+    width: 60vw;
+    path {
+      fill: transparent;
+      stroke-dasharray: 1260px;
+      stroke: black;
+    }
+  }
+}
+
+.grid_logos {
+  display: flex;
+  gap: 20px;
+  max-height: 600px;
+  overflow: hidden;
+  width: 100%;
+
+  @include lg {
+    width: 30%;
+  }
+
+  .image-column {
+    display: flex;
+    flex-direction: column;
+    // gap: 20px;
+    flex: 1;
+  }
+
+  .client-logo {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    object-fit: contain;
+  }
+}
+
+.client-grid {
+  display: flex;
+  overflow: hidden;
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 20s linear infinite;
+}
+
+.image-column.right {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  // gap: 20px;
+  @include lg {
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 50px;
+    padding: 50px;
+  }
+  @include xxl {
+    padding-inline: 0px;
+    // gap: 140px;
+  }
+  &_logos {
+    display: flex;
+    justify-content: space-between;
+    max-height: 400px;
+    overflow: hidden;
+    width: 100%;
+    @include lg {
+      gap: 0px;
+      width: 40%;
+      max-height: 340px;
+      margin-top: 45px;
+    }
+    @include xxl {
+      max-height: 600px;
+    }
+  }
+  &_logo {
+    width: 100%;
+    height: 45px;
+    object-fit: contain;
+    padding: 8px;
+    @include lg {
+      padding: 20px 32px;
+      width: 100%;
+      height: 90px;
+    }
+    @include xxl {
+      padding: 1.5vw 3vw;
+      width: 100%;
+      height: 6.7vw;
+    }
+  }
+  &_para {
+    position: relative;
+    padding-inline: 20px;
+    width: 100%;
+    @include lg {
+      padding-inline: 40px;
+      width: 70%;
+      margin-top: 30px;
+    }
+    p {
+      font-size: clamp(1.5rem, 1.2vw + 1rem, 2rem);
+      line-height: calc(1.5rem * 1.5);
+      font-weight: 400;
+      @include lg {
+        font-size: clamp(1.8rem, 1.5vw + 1rem, 2.5rem);
+        line-height: 1.5;
+      }
+      @include xxl {
+        font-size: clamp(2rem, 2vw + 1rem, 2.8vw);
+        line-height: calc(3.8vw * 1);
+      }
+    }
+    &_hide {
+      position: absolute;
+      z-index: -1;
+      color: white;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      padding-inline: 20px;
+      @include lg {
+        padding-inline: 40px;
+      }
+    }
+  }
+}
+
+.pathOne {
+  position: absolute;
+  top: -40px;
+  left: -2%;
+  @include lg {
+    top: -162px;
+  }
+  @include xxl {
+    top: -15%;
+  }
+  svg {
+    width: 36vw;
+    height: 36vw;
+  }
+}
+
+.pathTwo {
+  position: absolute;
+  top: 210px;
+  right: -8%;
+  svg {
+    width: 28vw;
+    height: 28vw;
+  }
+}
+
+.tag {
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-50%) rotate(270deg);
+  top: 50%;
+  left: -55px;
+  font-size: 2.5rem;
+  line-height: calc(2.5rem * 1.2);
+}

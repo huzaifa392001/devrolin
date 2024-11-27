@@ -1,0 +1,226 @@
+@import "../../styles/breakpoint";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding-inline: 20px;
+  height: 100vh;
+  margin-top: 60px;
+  @include lg {
+    margin-top: 0;
+    height: 100vh;
+    padding-inline: 0px;
+  }
+  // @include xxl {
+  //   height: calc(100vh - 254px);
+  // }
+  h3 {
+    font-size: 1.5rem;
+    line-height: calc(1.5rem * 1.5);
+    font-weight: 400;
+    margin-inline: auto;
+    @include lg {
+      // max-width: 1260px;
+      font-size: 3.25rem;
+      line-height: 4.0625rem;
+    }
+    @include xxl {
+      // max-width: 1560px;
+      font-size: 4.0625rem;
+      line-height: 4.875rem;
+    }
+  }
+}
+
+.pathFive {
+  position: absolute;
+  top: -5%;
+  right: -10%;
+  svg {
+    height: 14.997vw;
+    width: 15.027vw;
+  }
+}
+
+.lottie {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  @include lg {
+    padding: 130px;
+  }
+}
+
+.heading {
+  display: flex;
+  h3 {
+    font-size: 2rem;
+    line-height: calc(2rem * 1.5);
+    font-weight: 400;
+    margin-inline: auto;
+    @include lg {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      min-width: 1260px;
+      font-size: 3.28vw;
+      line-height: calc(3.28vw * 1.5);
+    }
+  }
+  &_cursor {
+    animation: Typewriter-cursor 1s infinite;
+    &[data-hide] {
+      animation: none;
+      opacity: 0;
+    }
+  }
+  &_cover {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    span {
+      transform-style: preserve-3d;
+    }
+  }
+  &_svg {
+    position: absolute;
+    left: 50%;
+    display: inline-flex;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 60px;
+    bottom: 0px;
+    @include lg {
+      bottom: -5px;
+      height: 155px;
+      width: 155px;
+    }
+
+    &[data-position="vienna"] {
+      @include lg {
+        width: 120px;
+        bottom: -6px;
+      }
+    }
+    &[data-position="ux"] {
+      height: 50px;
+      width: 50px;
+      @include lg {
+        height: 75px;
+        width: 75px;
+        bottom: 6px;
+      }
+    }
+    &[data-position="tailor"] {
+      bottom: -8px;
+      @include lg {
+        height: 118px;
+        width: 118px;
+        bottom: -25px;
+      }
+    }
+    &[data-position="brand"] {
+      bottom: -8px;
+      @include lg {
+        height: 150px;
+        width: 150px;
+        bottom: -37px;
+      }
+    }
+  }
+}
+
+@keyframes Typewriter-cursor {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.svg {
+  width: 148px;
+  display: none;
+  position: relative;
+  @include lg {
+    width: 300px;
+  }
+  @include xxl {
+    width: 350px;
+  }
+  &[data-change] {
+    div {
+      bottom: -62px;
+      @include lg {
+        bottom: -140px;
+      }
+      @include xxl {
+        bottom: -165px;
+      }
+    }
+  }
+  div {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: -67px;
+    @include lg {
+      width: 300px;
+      height: 300px;
+      bottom: -150px;
+    }
+    @include xxl {
+      width: 350px;
+      height: 350px;
+      bottom: -175px;
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+  height: 60px;
+  width: 60px;
+  z-index: 2;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  &::before {
+    content: "Scroll down";
+  }
+  @include lg {
+    transform: none;
+    left: 12%;
+    bottom: 25px;
+  }
+}
+
+.gif {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

@@ -1,0 +1,359 @@
+@import "../../styles/breakpoint";
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 120px;
+  background-color: rgba(255, 255, 255, 0);
+  @include lg {
+    min-height: 100vh;
+    margin-top: 200px;
+  }
+  h1 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+    margin-inline: auto;
+    max-width: 1260px;
+    font-size: 4rem;
+    line-height: calc(4rem * 1.2);
+    cursor: default;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      transform-origin: bottom;
+    }
+    @include lg {
+      font-size: 15.625rem;
+      line-height: calc(15.625rem / 2);
+      margin-top: calc(15.625rem / 2);
+    }
+    @include xxl {
+      margin-top: 10.937rem;
+      max-width: 1560px;
+      font-size: 21.875rem;
+      line-height: 10.937rem;
+    }
+  }
+}
+
+.heading {
+  margin-inline: auto;
+  font-size: 5rem;
+  text-align: center;
+  // font-weight: 500;
+  line-height: 0.9;
+  @include lg {
+    // margin-bottom: 50px;
+    font-size: 11rem;
+    text-align: center;
+    line-height: 0.8;
+  }
+  svg {
+    width: 50vw;
+    path {
+      fill: transparent;
+      stroke-dasharray: 2340px;
+      stroke: black;
+    }
+  }
+}
+
+.tag {
+  font-size: 3.125rem;
+  line-height: calc(3.125rem * 1.2);
+  z-index: 2;
+  transform: rotate(-90deg);
+  margin-left: -40px;
+}
+
+.pathOne {
+  position: absolute;
+  top: -280px;
+  left: 72%;
+  z-index: -1;
+  @include lg {
+    z-index: 0;
+    top: -780px;
+  }
+  svg {
+    width: 91.406vw;
+    height: 78.906vw;
+  }
+}
+
+.pathTwo {
+  position: absolute;
+  z-index: -1;
+  top: 250px;
+  left: -10%;
+  transform-origin: left;
+  &[data-change] {
+    left: auto;
+    right: -45%;
+    top: -50px;
+    rotate: 180deg;
+  }
+  svg {
+    width: 34.844vw;
+    height: 31.094vw;
+  }
+}
+
+.pathThree {
+  position: absolute;
+  bottom: -150px;
+  left: 70%;
+  transform: rotate(45deg) scale(1.2);
+  svg {
+    width: 34vw;
+    height: 39vw;
+  }
+}
+
+.pathFour {
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+
+  &[data-change="1"] {
+    transform: rotate(180deg);
+    left: 25%;
+    top: 500px;
+  }
+  &[data-change="2"] {
+    top: auto;
+    bottom: 400px;
+    right: 36%;
+  }
+  &[data-change="3"] {
+    transform: rotate(180deg);
+    top: auto;
+    bottom: 50px;
+    right: 5%;
+  }
+  svg {
+    width: 13.021vw;
+    height: 12.813vw;
+  }
+}
+.pathFive {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  z-index: -1;
+  svg {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+.pathSix {
+  position: absolute;
+  top: 50px;
+  left: 73%;
+  z-index: 4;
+
+  @include lg {
+    top: -150px;
+  }
+  svg {
+    height: 100px;
+    width: 100px;
+    @include lg {
+      height: 20.052vw;
+      width: 20.052vw;
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  @include lg {
+    margin-top: 50px;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  will-change: transform, opacity;
+  @include lg {
+    margin-top: 100px;
+  }
+  h2 {
+    position: relative;
+    z-index: 1;
+    // text-transform: uppercase;
+    text-align: center;
+    font-size: 5rem;
+    line-height: calc(5rem * 1.2);
+    @include lg {
+      font-size: 17vw;
+      line-height: 0.825;
+    }
+    &[data-stroke] {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(0.8);
+      width: 100%;
+      color: transparent;
+      z-index: 3;
+      -webkit-text-stroke: 1px black;
+    }
+    transform: scale(0.8);
+  }
+}
+
+.tag {
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-50%) rotate(270deg);
+  top: 50%;
+  left: 0px;
+}
+
+.tags {
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 4;
+  top: 50%;
+  left: 2.5vw;
+  font-size: 0.8vw;
+  line-height: 100%;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+  &[data-right] {
+    left: auto;
+    right: 2.5vw;
+  }
+}
+
+.foot {
+  position: absolute;
+  bottom: 2.5vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 2.5vw;
+  z-index: 4;
+  p {
+    font-size: 0.8vw;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    span {
+      color: rgba(0, 0, 0, 1);
+      margin-left: 15px;
+    }
+  }
+}
+
+.image {
+  overflow: hidden;
+  position: absolute;
+  transform: rotate(35deg);
+  top: -54%;
+  left: -35%;
+  width: 62vw;
+  height: 85vw;
+  z-index: 2;
+  object-fit: cover;
+  will-change: transform, opacity;
+  @include lg {
+    top: -35%;
+    left: -40%;
+    width: 32vw;
+    height: 45vw;
+  }
+  // clip-path: polygon(
+  //   0% 98%,
+  //   3% 100%,
+  //   12% 100%,
+  //   16% 99%,
+  //   22% 99%,
+  //   29% 100%,
+  //   37% 98%,
+  //   48% 98%,
+  //   56% 100%,
+  //   69% 98%,
+  //   75% 100%,
+  //   84% 99%,
+  //   92% 99%,
+  //   98% 99%,
+  //   100% 94%,
+  //   100% 88%,
+  //   99% 85%,
+  //   100% 78%,
+  //   99% 73%,
+  //   100% 67%,
+  //   98% 61%,
+  //   99% 54%,
+  //   98% 46%,
+  //   99% 37%,
+  //   97% 29%,
+  //   100% 18%,
+  //   99% 5%,
+  //   95% 0%,
+  //   86% 1%,
+  //   79% 0%,
+  //   68% 0%,
+  //   64% 4%,
+  //   58% 0%,
+  //   51% 1%,
+  //   46% 3%,
+  //   37% 1%,
+  //   29% 0%,
+  //   17% 1%,
+  //   13% 0%,
+  //   6% 0%,
+  //   1% 0%,
+  //   0% 4%,
+  //   0% 13%,
+  //   1% 20%,
+  //   1% 27%,
+  //   0% 33%,
+  //   0% 44%,
+  //   1% 53%,
+  //   0% 63%,
+  //   1% 69%,
+  //   0% 79%,
+  //   2% 83%,
+  //   0% 90%
+  // );
+}
+
+.counter {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 2;
+  @include lg {
+    bottom: -4vw;
+    left: 8vw;
+  }
+  h2 {
+    font-size: 4rem;
+    line-height: calc(4rem * 1.2);
+    @include xxl {
+      font-size: 4.6vw;
+      line-height: calc(4.6vw * 1.2);
+    }
+  }
+}
